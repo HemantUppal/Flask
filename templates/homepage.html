@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222; /* Dark background for contrast */
+            color: white; /* Default text color */
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items vertically */
+        }
+        nav h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px; /* Add padding for clickable area */
+        }
+        a:hover {
+            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.2); /* Slight highlight on hover */
+            border-radius: 5px;
+        }
+        marquee {
+            background-color: #444; /* Background for marquee */
+            padding: 10px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .main0, .main1, .main2, .main3 {
+            text-align: center;
+            margin: 20px;
+        }
+        .main1 a {
+            display: inline-block; /* Allow for block-level spacing */
+            margin: 10px; /* Add margin between links */
+            text-decoration: none;
+            color: white; /* Ensuring links are visible */
+        }
+        .main2 img {
+            width: 150px; /* Set a uniform width for images */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px; /* Add margin around images */
+        }
+        ul {
+            text-align: left; /* Align bullet points to the left */
+            max-width: 600px; /* Constrain width for better readability */
+            margin: 0 auto; /* Center the list */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h4>Welcome {{ user.name }}</h4>
+        <ul>
+            <li><a href="/homepage">Home</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/summary">Summary</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <marquee class="marquee1">Join KHHaS for getting better deals and discounts on the Services.</marquee>
+    <div class="main0">
+        <h1>HELLO USER! WELCOME TO KHHaS SERVICES.</h1>
+        <h2>HOW MAY I HELP YOU?</h2>
+    </div>
+
+    <div class="main1" id="main1">
+        <h3 id="main1Title"> Looking for?</h3>
+
+        <a href="#" onclick="updateContent('AC Repair', 'Details about AC Repair...','1000','5 Star')" class="a2">AC Repair</a>
+        <a href="#" onclick="updateContent('Saloon', 'Details about Saloon services...','1000','5 Star')" class="a3">Saloon</a>
+        <a href="#" onclick="updateContent('Cleaning', 'Full home Cleaning services ','1000','5 Star')" class="a4">Cleaning</a>
+        <a href="#" onclick="updateContent('Electrician', 'Details about Electrician services...','1000','5 Star')" class="a5">Electrician</a>
+        <a href="#" onclick="updateContent('Service 5', 'Details about Service 5...','1000','5 Star')" class="a6">Service 5</a>
+        <a href="#" onclick="updateContent('Service 6', 'Details about Service 6...','1000','5 Star')" class="a7">Service 6</a>
+    </div>
+
+    <div class="main2">
+        <a href="#"><img src="https://d2dgt4tr79mk87.cloudfront.net/manufacturer/Ababeel-Leathers-185x88.png" alt="Ababeel Leathers"></a>
+        <a href="#"><img src="https://d2dgt4tr79mk87.cloudfront.net/manufacturer/2017-10-12-185x88.png" alt="Manufacturer 2"></a>
+        <a href="#"><img src="https://d2dgt4tr79mk87.cloudfront.net/manufacturer/afterscake-removebg-preview.png" alt="After Scake"></a>
+        <a href="#"><img src="https://allcare3mstores.com/wp-content/uploads/2021/11/allcare-new.jpg" alt="Allcare"></a>
+    </div>
+    
+    <div class="main3">
+        <h1>Why Choose KHHaS?</h1>
+        <ul>
+            <li>On Demand Scheduled</li>
+            <li>Verified Partners</li>
+            <li>Service Warranty</li>
+            <li>Online Payments</li>
+            <li>24/7 Online Support</li>
+        </ul>
+    </div>
+    
+    <h2 style="text-align: center; font-size: 45px;">
+        Hire Professional Home Service Experts in Delhi
+    </h2>
+
+    <script>
+        function updateContent(title, details, price, ratings) {
+            document.getElementById('main1Title').innerText = title;
+            document.getElementById('main1').innerHTML = `
+                <h3 id="main1Title">${title}</h3>
+                <p>${details}  Price: ${price} Rating: ${ratings} <button> Book now </button> </p>
+        <a href="#" onclick="updateContent('AC Repair', '<H1>Details about AC Repair...<H1>','1000','5 Star')" class="a2">AC Repair</a>
+        <a href="#" onclick="updateContent('Saloon', 'Details about Saloon services...','1000','5 Star')" class="a3">Saloon</a>
+        <a href="#" onclick="updateContent('Cleaning', 'Full home Cleaning services ','1000','5 Star')" class="a4">Cleaning</a>
+        <a href="#" onclick="updateContent('Electrician', 'Details about Electrician services...','1000','5 Star')" class="a5">Electrician</a>
+        <a href="#" onclick="updateContent('Service 5', 'Details about Service 5...','1000','5 Star')" class="a6">Service 5</a>
+        <a href="#" onclick="updateContent('Service 6', 'Details about Service 6...','1000','5 Star')" class="a7">Service 6</a>
+            `;
+        }
+    </script>
+</body>
+</html>

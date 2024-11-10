@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+</head>
+<body>
+    <!-- Signup Form -->
+    <h1>Signup for Service Professional</h1>
+    <form method="POST" action="/proregister">
+        <label for="signup-name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="signup-email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="signup-password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="Servicename">Service name:</label><br>
+        <select id="Servicename" name="Servicename">
+            <option value="Consultation">Consultation</option>
+            <option value="jhadupocha">jhadu pocha</option>
+            <option value="sewageclean">latrine saaf krta hu</option>
+            <option value="Training">Training</option>
+            <option value="Support">Support</option>
+            <option value="Installation">Installation</option>
+        </select><br><br>
+    
+        <!-- Experience Input -->
+        <label for="experience">Experience (in yrs):</label><br>
+        <input type="number" id="experience" name="experience" min="0"><br><br>
+    
+        <!-- Document Attachment -->
+        <label for="Attachdoc">Attach documents:</label><br>
+        <input type="file" id="Attachdoc" name="Attachdoc" accept=".pdf, .doc, .docx, .jpg, .png"><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="address" id="address" name="address"><br><br>
+
+        <label for="pincode">Pincode:</label><br>
+        <input type="pincode" id="pincode" name="pincode" ><br><br>
+        
+        <button type="submit">Signup</button>
+    </form>
+
+</body>
+</html>
