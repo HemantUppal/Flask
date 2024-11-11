@@ -29,7 +29,7 @@ def customer_login():
 
 
 
-@app.route('/customer-register',methods=['POST'])
+@app.route('/customer-register',methods=['GET','POST'])
 def customer_register():
     if request.method == 'POST':
         fullname = request.form['name']
