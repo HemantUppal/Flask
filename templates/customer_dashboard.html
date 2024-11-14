@@ -1,4 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Customer Dashboard</h2>
+        
+        <h3>Available Services</h3>
+        <ul class="list-group">
+            {% for service in services %}
+            <li class="list-group-item">
+                {{ service.name }} - ${{ service.price }}
+                <a href="{{ url_for('request_service') }}" class="btn btn-primary btn-sm float-right">Request Service</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Your Service Requests</h3>
+        <ul class="list-group mt-4">
+            {% for request in service_requests %}
+            <li class="list-group-item">
+                Status: {{ request.service_status }}
+                {% if request.service_status == "requested" %}
+                    <form action="{{ url_for('cancel_service_request', request_id=request.id) }}" method="POST">
+                        <button type="submit" class="btn btn-danger btn-sm">Cancel Request</button>
+                    </form>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -137,4 +173,4 @@
         }
     </script>
 </body>
-</html>
+</html> -->

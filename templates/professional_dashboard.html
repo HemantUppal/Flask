@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Professional Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Professional Dashboard</h2>
+
+        <h3> Today Services </h3> 
+        <ul class="list-group">
+            {% for request in service_requests %}
+            <li class="list-group-item">
+                
+                Service: {{ request.service.name }} <br>
+                Status: {{ request.service_status }} <br>
+
+                <!-- {% if request.service_status == "requested" %}
+                    <form action="{{ url_for('accept_request', request_id=request.id) }}" method="POST">
+                        <button type="submit" class="btn btn-success btn-sm">Accept</button>
+                    </form>
+                    <form action="{{ url_for('reject_request', request_id=request.id) }}" method="POST">
+                        <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                    </form>
+                {% elif request.service_status == "assigned" %}
+                    <form action="{{ url_for('complete_request', request_id=request.id) }}" method="POST">
+                        <button type="submit" class="btn btn-primary btn-sm">Complete</button>
+                    </form>
+                {% endif %} -->
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
